@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jcmano.sqliteapp_4itg_23112017.MainActivity">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+
+       android:id="@+id/tvID"
+       android:text="Student ID: "
+       android:textSize="18dp"
+       android:layout_marginLeft="21dp"
+       android:layout_marginStart="21dp"
+       android:layout_marginTop="28dp"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/tvFName"
+        android:text="Firstname: "
+        android:textSize="18dp"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/etID"
+        android:layout_alignLeft="@+id/tvID"
+        android:layout_alignStart="@+id/tvID" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/tvLName"
+        android:text="Surname: "
+        android:textSize="18dp"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/tvFName"
+        android:layout_alignLeft="@+id/tvFGrade"
+        android:layout_alignStart="@+id/tvFGrade" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/tvFGrade"
+        android:text="Final Grade: "
+        android:textSize="18dp"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/tvLName"
+        android:layout_alignLeft="@+id/tvFName"
+        android:layout_alignStart="@+id/tvFName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/etID"
+        android:width="200dp"
+        android:layout_alignBottom="@+id/tvID"
+        android:layout_toRightOf="@+id/tvFGrade"
+        android:layout_toEndOf="@+id/tvFGrade" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/etFName"
+        android:width="200dp"
+        android:layout_alignBottom="@+id/tvFName"
+        android:layout_alignLeft="@+id/etID"
+        android:layout_alignStart="@+id/etID" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/etLName"
+        android:width="200dp"
+        android:layout_above="@+id/tvFGrade"
+        android:layout_alignLeft="@+id/etFName"
+        android:layout_alignStart="@+id/etFName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/etFGrade"
+        android:width="200dp"
+        android:layout_alignBottom="@+id/tvFGrade"
+        android:layout_toRightOf="@+id/tvFGrade"
+        android:layout_toEndOf="@+id/tvFGrade" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btNext"
+        android:text="Next"
+        android:onClick="showNext"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/tvLName"
+        android:layout_alignEnd="@+id/tvLName" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btPrevious"
+        android:text="Previous"
+        android:onClick="showPrevious"
+        android:layout_alignBaseline="@+id/btNext"
+        android:layout_alignBottom="@+id/btNext"
+        android:layout_toRightOf="@+id/btNext"
+        android:layout_toEndOf="@+id/btNext" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btFirstItem"
+        android:text="First"
+        android:onClick="showFirstRecord"
+
+        android:layout_alignBaseline="@+id/btPrevious"
+        android:layout_alignBottom="@+id/btPrevious"
+        android:layout_toRightOf="@+id/btPrevious"
+        android:layout_toEndOf="@+id/btPrevious" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btLastItem"
+        android:text="Last"
+        android:onClick="showLastRecord"
+
+        android:layout_alignBaseline="@+id/btFirstItem"
+        android:layout_alignBottom="@+id/btFirstItem"
+        android:layout_toRightOf="@+id/btFirstItem"
+        android:layout_toEndOf="@+id/btFirstItem" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btAdd"
+        android:text="add"
+        android:onClick="addItem"
+
+        android:layout_below="@+id/btNext"
+        android:layout_alignLeft="@+id/btNext"
+        android:layout_alignStart="@+id/btNext" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btEdit"
+        android:text="Edit"
+        android:onClick="editItem"
+
+        android:layout_alignBaseline="@+id/btAdd"
+        android:layout_alignBottom="@+id/btAdd"
+        android:layout_toRightOf="@+id/btAdd"
+        android:layout_toEndOf="@+id/btAdd" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btSave"
+        android:text="Delete"
+        android:onClick="deleteRecord"
+
+        android:layout_below="@+id/btFirstItem"
+        android:layout_toRightOf="@+id/btPrevious"
+        android:layout_toEndOf="@+id/btPrevious" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/btSaveNewRecord"
+        android:text="Save new record"
+        android:onClick="saveNewRecord"
+
+        android:layout_below="@+id/btAdd"
+        android:layout_alignLeft="@+id/btAdd"
+        android:layout_alignStart="@+id/btAdd" />
+
+ <Button
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+
+     android:id="@+id/btUpdateRecord"
+     android:text="Update Record"
+     android:onClick="saveUpdate"
+
+     android:layout_below="@+id/btEdit"
+     android:layout_toRightOf="@+id/btSaveNewRecord"
+     android:layout_toEndOf="@+id/btSaveNewRecord" />
+
+
+</RelativeLayout>
